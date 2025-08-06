@@ -33,6 +33,7 @@ try {
     powercfg /change hibernate-timeout-dc 0 2>$null
     powercfg /change monitor-timeout-ac 0
     powercfg /change monitor-timeout-dc 0
+    Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\CrashControl" -Name "CrashDumpEnabled" -Value 0
 
     Write-Host "`n✅ System keep-alive and power settings applied." -ForegroundColor Green
 }
